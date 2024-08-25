@@ -1,15 +1,16 @@
-import { StyleSheet } from 'react-native';
+import ProductList from '@/components/prdouctList';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { StyleSheet, View, Text } from 'react-native';
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+const queryClient = new QueryClient()
 
 export default function TabTwoScreen() {
   return (
+    <QueryClientProvider client={queryClient}>
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/two.tsx" />
+      <Text>Cart</Text>
     </View>
+    </QueryClientProvider>
   );
 }
 
