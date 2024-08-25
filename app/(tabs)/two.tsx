@@ -1,4 +1,3 @@
-import ProductList from '@/components/prdouctList';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { StyleSheet, View, Text } from 'react-native';
 

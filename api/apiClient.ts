@@ -1,5 +1,5 @@
 import request from 'superagent'
-import { ProductList } from '@/models/Product'
+import ProductList from '@/models/Product'
 
 
 const coreURL = 'https://api.escuelajs.co/api/v1/products'
@@ -18,3 +18,4 @@ export async function getSingleProduct(id: number) {
 
   return response.body
 }
+

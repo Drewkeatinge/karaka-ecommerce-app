@@ -1,12 +1,13 @@
 import { StyleSheet, View } from 'react-native'
-import ProductList from '@/components/prdouctList'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import ProductList from '@/components/productList'
 
 const queryClient = new QueryClient()
 
 export default function TabOneScreen() {
   return (
     <QueryClientProvider client={queryClient}>
+
       <View style={styles.container}>
         <ProductList />
       </View>
