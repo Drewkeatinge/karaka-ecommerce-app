@@ -9,7 +9,6 @@ import type { CartItem } from '../../models/Cart';
 function ProductDetails() {
   const { id } = useLocalSearchParams();
 
-  console.log(id);
 
   const { addToCart } = useCart();
 

@@ -2,7 +2,6 @@ import { useQuery } from '@tanstack/react-query';
 import { getProducts } from '@/api/apiClient'; // Assuming getProducts fetches product data
 import { View, Text, FlatList, Image, StyleSheet } from 'react-native';
 import { Link } from 'expo-router';
-import { CartProvider } from '@/CartContext';
 
 
 function ProductList() {
@@ -24,8 +23,6 @@ function ProductList() {
   }
 
   const products = data
-
-  console.log(products)
 
   return (
   <>

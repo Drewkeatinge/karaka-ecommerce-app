@@ -1,9 +1,17 @@
 import React from 'react';
 import { View, Text, Button, FlatList } from 'react-native';
 import { useCart } from '../../CartContext'
+import { useRouter } from 'expo-router';
 
-const CartScreen: React.FC = () => {
+const CartScreen = () => {
   const { items, removeFromCart, updateQuantity } = useCart();
+
+  const router = useRouter()
+
+
+  const goToDeliveryAddress = () => {
+    router.push('/deliveryAddress');
+  };
 
   const renderItem = ({ item }: { item: { id: number; name: string; price: number; quantity: number } }) => (
     <View>
@@ -24,6 +32,7 @@ const CartScreen: React.FC = () => {
         renderItem={renderItem}
       />
       <Text>Total: ${items.reduce((total: number, item: { price: number; quantity: number; }) => total + item.price * item.quantity, 0)}</Text>
+      <Button title="Go to Checkout" onPress={goToDeliveryAddress} />
     </View>
   );
 };
